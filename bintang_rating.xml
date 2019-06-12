@@ -65,6 +65,9 @@
     font-size: 1em;
     color: #2F353E;
   }
+  .bintang {
+    color: #EEBD01;
+  }
 
   /*! POST BERANDA */
   .PostKiri {
