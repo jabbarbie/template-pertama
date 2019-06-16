@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html b:css='false' b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+  <b:skin version='1.3.0'><![CDATA[ 
+  /*
+  <Variable name="bgcolor" description="Background Body" type="color" default="#f0f1f2" value="#f0f1f2" /> 
+  */
+
+  /*! STYLE DI SINI */
+  
+  ]]>
+  </b:skin>
+
+  <script type="text/javascript">
+  //<![CDATA[
+  var datap;
+  function sate(data){
+    console.log(data);
+    let entry = data.feed.entry || 0;
+    if (entry == 0){console.log('Label 404'); return false};
+    var post = [];  
+    for (var i = entry.length - 1; i >= 0; i--) {
+      console.log(i);
+      post[i] = {};
+      post[i].title = entry[i].title.$t;
+      post[i].url = entry[i].link[2].href || 0;
+      post[i].thumbnail = (entry[i].media$thumbnail.url || 0);
+    }
+    console.log(post);
+    datap = post;
+  }
+  //]]>
+
+  </script>
+
+</head>
+<body>
+  <div id="wrapper" class="container">
+    <main>
+      <b:section id='idnya' showaddelement='yes'>
+        <b:widget id='Blog1' type='Blog'>
+          <b:includable id='main'>
+            <b:loop values='data:posts' var='x'>
+              <b:if cond='data:view.isMultipleItems'>
+                <h1><a expr:href='data:x.url'><data:x.title /></a></h1>
+              </b:if>
+              <b:if cond='data:view.isPost'>
+                <h1><data:x.title /></h1>
+                <b:include name='related' data='x' />
+                
+              </b:if>
+            </b:loop>
+          </b:includable>
+
+          <b:includable id='related' var='x'>
+            <h2>Related Post</h2>
+              <script type="text/javascript" expr:src='&quot;/feeds/posts/default/-/&quot; + data:x.labels.last.name + &quot;?alt=json-in-script&amp;callback=sate&amp;max-results=5&quot;'>  
+              </script>
+            <ul id="related">
+
+            </ul>
+          </b:includable>
+
+        </b:widget>
+      </b:section> 
+    </main>
+  </div>
+
+
+<script>
+console.log(datap.length);
+for (var i = datap.length - 1; i >= 0; i--) {
+  var datax = document.getElementById("related");
+  var n = document.createElement("li");
+  var isi = document.createTextNode(datap[i].title);
+  
+  n.appendChild(isi);
+  datax.appendChild(n);
+}
+</script>
+</body>
+</html>
