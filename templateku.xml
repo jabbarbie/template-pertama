@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html b:css='false' b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&amp;display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <b:skin version='1.3.0'><![CDATA[
+  /*
+  <Variable name="bgcolor1" description="Background Body" type="color" default="#fff" value="#30e3ca" /> 
+  <Variable name="bgcolor2" description="Background Body" type="color" default="#fff" value="#30e3ca" /> 
+  <Variable name="bgcolor3" description="Background Body" type="color" default="#fff" value="#145374" /> 
+  <Variable name="bgcolor4" description="Background Body" type="color" default="#fff" value="#40514e" /> 
+
+
+  <Variable name="maincolor" description="Warna Utama" type="color" default="#fff" value="#3fc1c9" /> 
+  <Variable name="hovercolor" description="Warna Hover Body" type="color" default="#fff" value="#364f6b" /> 
+  <Variable name="secondcolor" description="Warna Cadangan Body" type="color" default="#fff" value="#fc5185" /> 
+  <Variable name="forgetcolor" description="Warna Cadangan Body" type="color" default="#fff" value="#eaeaea" /> 
+
+  <Variable name="font1" description="Font Body" type="font" default="400 1em Open Sans, serif" hideEditor="true"  value="400 1em Open Sans, serif" />
+  <Variable name="font2" description="Font Body" type="font" default="500 1em Merriweather, serif" hideEditor="true"  value="500 1em Merriweather, serif" />
+
+  */
+
+  /*! STYLE DI SINI */
+  :root {--satu: #ff2e63; --dua: #08d9d6; --tiga: #07689f}
+
+  * {margin: 0; padding:0}
+  html {margin: 0; padding:0}
+  body {
+    background-color: $forgetcolor;
+    font: $font1;
+    font-size: 14px;
+
+    line-height: 1.5em;
+  }
+  a { text-decoration: none; color: #ddd; display: inline-block}
+  ol {list-style: none}  
+  ul,li {display : block}
+  span {color: #999}
+  b {color: #444}
+  /*! Wrapper */
+  .container {
+  	width: 75%; 
+  	margin: 0 auto ;
+  }
+  #wrapper { 
+  	background-color: white; 
+  	display: grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+  	grid-auto-rows: minmax(5px, auto);
+  	align-content: center;
+    margin-bottom: 0;
+  }
+  /*!  */
+  header {
+  	grid-column: 1 / 4 ;
+  	grid-row: 1;
+		text-align: center;
+		height: 40px;
+		color: #efefef;
+		vertical-align: baseline;
+    margin: 1%;
+    border: 1px dotted #aaa;
+    padding: 1% 0;
+  }
+  header h1 {letter-spacing: 0.2em; vertical-align: middle; line-height: 40px;}
+  /*! NAV */
+  .atas {
+		background-color: $maincolor;
+    /*! background-image: linear-gradient(to bottom, $bgcolor1, $bgcolor2); */
+    width: 100%;
+    /*! position: sticky; */
+    top: 0;
+    z-index: 10;
+    opacity: 0.9;
+    box-shadow: 3px 3px 3px #ddd;
+
+  }
+  nav {
+  	display: flex;
+    /*! position: sticky; */
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0; margin: 0;
+  }
+  /*! Aside */
+  aside {
+  	grid-column: 3;
+  	grid-row: 2 / 3;
+  }
+  /*! MAIN */  
+  main {
+  	grid-column: 1 / 3;
+  	grid-row: 2 / 3;
+  	background-color: white; 
+  	padding: 1%;
+  }
+  /*! Footer */
+  footer {
+    width: 100%;
+    text-align: center;
+    grid-column: 1 / 4;
+    grid-row: 3;
+    padding: 1% 0;
+    /*background-color: #fcf594;*/
+    /*background-image: linear-gradient(to top, $maincolor, white);*/
+  }
+  footer h2 {
+    font-weight: 700;
+    color: $maincolor;
+    font-size: 1em;
+  }
+  .post {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: $bgpost;
+    border-bottom: 1px solid #efefef;
+  }
+  article {
+    background-color: white;
+    margin-bottom: 1%;
+  }
+  article:last-child {
+    margin-bottom: 0;
+  }
+  h3.PostTitle {
+    font-weight: 500;
+    font-size: 1em;
+  }
+  .PostTitle a {
+  	margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #444;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .PostHeader {
+    font-size: 0.9em;
+    color: #52616b;
+    letter-spacing: 0.5px;
+  }
+  .postBodyBeranda {
+  	line-height: 1.5;
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 5%;
+    font-weight: 300;
+  }
+  .nav {
+    display: flex;
+    overflow: hidden;
+  }
+  .nav a, .menuhp {
+    display: block;
+    text-decoration: none;
+    color: #f2f2f2;
+    padding: 0.8em;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  .menuhp {display: none}
+
+  nav form > input[type="text"]{
+    border: none;
+    margin-top: 10px;
+    padding: 0.8em;
+    background-color: white;
+    color: #666;
+    border-radius: 4px;
+    opacity: 0.5;
+    transition: 1s ease-in-out;
+  }
+  nav form > input[type="text"]:hover {
+  	opacity: 1;
+  	transform: scaleX(1.5);
+  }
+  .nav a:hover, .active {background-color: $hovercolor; color: white;}
+  /*! END NAV */
+  /*! POST BERANDA */
+  .Beranda {
+  	display: grid;
+  	grid-template-columns: repeat(2, 1fr);
+  	grid-gap: 2em;
+  }
+  .PostKiri {
+    flex: 1;
+    position: relative;
+  } 
+  .PostKanan {flex: 1;}
+  .PostKiri img {
+  	width: 100%;
+  }
+  .postLabelBeranda {
+  	position: absolute; 
+  	left: 0.3em;
+  	top: 0.3em; 
+  	background-color: $maincolor; 
+  	padding: 1px 5px; 
+  	color: white;
+  	font-size: 0.9em;
+    font-weight: 550;
+  }
+  /* POST DETAIL */
+  .PostDetail {
+    overflow: hidden;
+    margin: 1% 0;
+    font-size: 1em;
+  }
+  h1.PostTitle {
+    font-size: 1.5em;
+    line-height: 1em;
+    color: $hovercolor;
+    line-height: 1.5;
+    margin: 2% 0;
+    border-top: dotted 1px $forgetcolor;
+    border-bottom: dotted 1px $forgetcolor;
+    letter-spacing: 0.2px;
+
+  }
+  .PostDetailBody {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  .PostDetailBody h2 {
+    font-size: 1.5em;
+    line-height: 2;
+    color: $hovercolor;
+  }
+  .PostDetailBody img {
+    width: 100%;
+    height: 100%;
+  }
+  /*! Block Komentar */
+  #comments {
+  }
+  .comments-content {
+  }
+  #top-ra {
+    background-color: transparent;
+    list-style: none;
+  }
+  #top-ra li {
+
+  }
+  #top-ra a {
+    color: #ddd;
+  }
+  #top-ra ol {
+    list-style: none;
+  }
+  #comment-thread ol {
+  	list-style: none;
+  	padding-left: 0;
+  }
+  .avatar-image-container {
+    display: none;
+  }
+
+  .comment-block {
+    /*! Div per komen */
+    background-color: skyblue;
+    padding: 1% 1% 2% 1%;
+    z-index : 2;
+  }
+  .comment-header {
+    /*! Username Komen */
+    font-size: 1.1em; 
+    position: relative;
+    background-color: #b1e8ed;
+    padding: 1%;
+  }
+  cite.user {
+    font-style: normal;
+    font-weight: bold;
+  }
+  cite.user > a {
+    color: #5e6073 !important;
+  }
+  .comment-header .datetime {
+    /*! Tanggal Komen */
+    position: absolute;
+    right: 1%;    
+  }
+  .comment-header .datetime > a {
+    color: #5e6073 !important;
+  } 
+  
+  .item-control {
+    margin-left: 1%;
+  }
+
+  /*! Widget General */
+  aside .widget {
+  	margin-bottom: 1em;
+    padding: 0 0.5%;
+  }
+  .widget .title {
+    position: relative; 
+    margin-bottom: 10px; 
+    border-bottom: 10px solid pink;
+    border-image:  repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 20px,
+      black 20px,
+      black 40px) ; 
+  }
+  aside .widget h3 {
+  	font-size: 1.2em; 
+  	color: #2a2a2a; 
+    font-weight: 400;
+  	padding-left: 1.2em;
+  }
+  aside .widget h3:before{
+  	position: absolute;
+  	width: 10px;
+  	height: 100%;
+  	top: 0px;
+  	left: 0;
+  	color: $secondcolor;
+  	display: inline-block;
+  	z-index: -0;
+  	font-family: "Font Awesome 5 Free"; font-weight: 900;content: "\f358";
+  }
+  .widget-content {margin-top: 1em}
+
+  aside ul {
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+  	justify-content: flex-start;
+  }
+  aside li {
+  	padding: 2px 5px;
+  	background-color: $hovercolor;
+  	margin: 3px;
+  }
+  aside li a {
+  	color: white;
+  	font-weight: 500;
+  }
+  /*! Popular Posts */
+  .pops {
+  	display: flex;
+  	flex-wrap: wrap;
+  	flex-direction: row;
+  }
+  .pops .isi {
+  	width: 100%;
+  	display: flex;
+  	flex-direction: row;
+    margin: 1% 0;
+  }
+  .pops .isi .garis {
+    width: 6px;
+  }
+  .pops a {color: inherit}
+  .pops .isi .gambar {flex: 0 20%; margin: 0 1%}
+  .pops img {width: 100%; max-width: 50px}
+  .pops h4 {font-size: 1em; font-weight: 500;line-height: 1.5}
+  .pops .labelpops {font-size: 0.8em}
+  .pops .labelpops span:not(last-child){}
+  /*! Label */
+  .bels ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 30%;
+  }
+  /* Keperluan Ads */
+  .adsbygoogle{ display: block;}
+  .has-vertical-ads .centered .centered-bottom{ display: inline-block; width: 100% }
+
+  @media (max-width: 992px){
+		/*! Desktop */
+		body {font-size: 12px}		
+		#wrapper {width: 95%; background-color: red; grid-gap: 0px; padding: 0}
+		main {grid-column: 1 / 4; padding: 0}
+		.Beranda {
+			grid-template-columns: 1fr;
+		}
+		aside {grid-row: 3; grid-column: 1 / 4}
+		.postBodyBeranda {text-align: justify; line-height: 1.6}
+		.PostKanan {margin: 0; padding: 1% 2%; }
+		footer {grid-row: 4}
+
+	}
+	@media (max-width: 768px){
+		/*! Tablet - Pablet */
+		#wrapper {width: 100%; background-color: yellow;}
+		.post {flex-direction: column; max-height: 100vh;}
+		article {margin: 0}
+
+		/*! Menu */
+		.nav {display: none;}
+    .menuhp {display: block; background-color: #4CAF50}    
+    .nav {flex-wrap: wrap;}
+    .nav li {flex: 0 50%;}
+
+    nav {flex-wrap: wrap; flex-direction: column;}
+    nav form > input[type="text"]{
+      width: 100%;
+    }
+    .wrapper {width: 100%}      
+
+    .bukasitik {
+      display: flex;
+    }
+    /*! End Menu HP */
+	}
+	@media (max-width: 576px; background-color: green){
+		/*! HP */
+	}
+
+  .Manga {background-color: var(--satu)}
+  .Bratang {background-color: var(--dua)}
+
+
+  ]]>
+  </b:skin>
+   <b:defaultmarkups>
+    <b:defaultmarkup type='Common'>
+    	<b:includable id='title' var='x'>
+    		<div class="title">
+	    		<h3><data:x /></h3>    		
+    		</div>
+    	</b:includable>
+      
+    </b:defaultmarkup>
+    
+    <b:defaultmarkup type='Blog'>
+      <!-- B CONSTRUCTOR -->
+      <b:includable id='main'>
+      	<div>
+      		<b:class cond="data:view.isMultipleItems" name="Beranda"/>
+	        <b:loop values='data:posts' var='x' index="i">
+	          <b:include name='PostMain' data='x' />
+            <b:if cond='data:i == 1 or data:i == 4'>
+              <b:include name='postIklan' cond='data:view.isMultipleItems and data:x.includeAd' data='x' />              
+            </b:if>
+	        </b:loop>
+      	</div>
+
+      </b:includable>
+
+      <!-- B CEK POSISI HALAMAN -->
+      <b:includable id='PostMain' var='x'>
+        <b:switch var='data:blog.pageType'>
+          <b:case value='index'/>
+            <b:include name='Beranda' data='x' />
+          <b:case value='item'/>
+            <b:include name='PostDetail' data='x' />
+        </b:switch>
+      </b:includable>
+
+      <!-- B HALAMAN INDEX -->
+      <b:includable id='Beranda' var='x'>
+        <article>
+          <div class='post'>
+            <!-- ThumbnailPost Index-->
+            <div class="PostKiri">
+            	<h2 expr:class='&quot;postLabelBeranda &quot; + data:x.labels.first.name'><data:x.labels.first.name /></h2>
+              <b:if cond='data:x.featuredImage'>
+                <b:include name="FungsiGambar" data='data:x.featuredImage'/>     
+              <b:else/>
+                Kosong
+              </b:if>
+            </div>
+            <!-- Snippet Body Post Index-->
+            <div class="PostKanan">
+              <b:include name='PostTitle' data='data:x' />
+              <b:include name='FungsiPost' data='data:x' />
+              <b:comment>
+                  <b:include name='PostFooter' data='data:x' />                    
+              </b:comment>
+            </div>          
+          </div>
+        </article>
+      </b:includable>
+
+      <!-- B Detail Post-->      
+      <b:includable id='PostDetail' var='x'>
+        <div class='PostDetail'>
+          <b:include name='postMeta' data='x' />
+          <b:include name='postIklan' cond='data:x.includeAd' />
+          <b:include name='PostTitle' data='data:x' />
+          <b:include name='Breadcrumbs' data='data:x' />
+
+          <div class="PostDetailBody">
+            <data:x.body />           
+          </div>
+          <b:include name='postIklan' cond='data:x.includeAd' />
+
+          <b:include name='postDetailFooter' data='x' cond='data:view.isPost' />
+        </div>
+      </b:includable>
+
+      <!-- B Post Footer  -->
+      <b:includable id='PostFooter' var='x'>
+        <div class='PostHeader'>
+          <b:class name='PostHeader' />
+          <span>
+          	<i class="far fa-user"></i><b><data:x.author.name /> </b> |
+          	<i class="far fa-clock"></i> <data:x.date />
+          </span>
+        </div>
+      </b:includable>
+
+      <!-- B Post Detail Footer -->
+      <b:includable id='postDetailFooter' var='x'>
+        <div class='post-footer'>
+          <b:include data='x' name='postTerkait'/>         
+        </div> 
+      </b:includable>
+
+      <!-- B Post Terkait -->
+      <b:includable id='postTerkait' var='x'>
+        <h1>Related Post</h1>
+        <div id='related-wrap'>
+          <div class='title-wrap'>
+            <h3><data:messages.youMayLikeThesePosts/></h3>
+          </div>
+          <div class='related-ready'>
+            <data:x.title />
+            <b:if cond='data:x.labels'>
+              <div class='related-tag' expr:data-label='data:x.labels.first.name'/>
+            <b:else/>
+              <div class='related-tag' data-label='random'/>
+            </b:if>
+          </div> 
+        </div>  
+      </b:includable>
+      <!-- B Post Label / Kategori -->
+      <b:includable id='PostLabel' var='x'>
+        <div class="label">
+          <b:loop values='data:x' var='label'>
+            <span><a expr:href='data:label.url'><data:label.name /></a> / </span>
+          </b:loop>  
+        </div>
+      </b:includable>
+
+      <!-- B FUNGSI CEK GAMBAR -->
+      <b:includable id='FungsiGambar' var='pic'>
+        <b:if cond='data:view.isMultipleItems or data:view.isHomepage'>
+          <img expr:src='resizeImage(data:pic, 330, "330:220")' />
+        </b:if>
+      </b:includable>
+
+      <!-- B FUNGSI POST -->
+      <b:includable id='FungsiPost' var='x'>
+        <div>
+          <b:if cond='data:view.isHomepage or data:view.isMultipleItems'>
+            <b:eval expr='data:x.snippets.long snippet {length: 100, links: false, linebreaks: false, ellipsis: true}' cond='data:view.isHomepage' />
+            <b:class name='postBodyBeranda' />
+          </b:if>
+        </div>
+      </b:includable>
+      <!-- B Meta Post-->
+      <b:includable id='postMeta' var='x'>
+        <b:include data='x' name='postMetadataJSON'/>
+      </b:includable>
+
+      <!-- Iklan / Adsense -->
+      <b:includable id='postIklan' var='x'>
+        <b:if cond='!data:view.isPreview'>
+          <div class="postIklan">          
+          <!-- Jika bukan dalam mode preview -->
+          <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+            <!-- Jika Iklan tersedia / siap untuk ditayangkan -->
+            <b:if cond='data:this.adCode != &quot;&quot; '>
+              <!-- Jika code adsense tidak kosong -->
+              <data:this.adCode />
+            <b:else />
+              <b:include name='defaultAdUnit' />
+              <!-- defaultAdUnit fungsi bawaan -->
+            </b:if>
+            
+          <b:else />
+            <!-- Jika iklan 404 -->
+            <div class="postIklan404">
+              <span><b:message name='messages.adsGoHere'/></span>
+            </div>
+          </b:if>
+          </div>
+        </b:if>
+
+      </b:includable>
+      <!-- Breadcrumbs -->
+      <b:includable id='Breadcrumbs' var='post'>
+      <!-- Post Breadcrumbs -->
+        <nav id='breadcrumb'>
+          <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+          <b:if cond='data:post.labels'>
+            <em class='delimiter'/>
+            <a class='b-label' expr:href='data:post.labels.first.url'> <data:post.labels.first.name/></a>
+          </b:if>
+          <em class='delimiter'/>
+          <span class='current'><data:post.title/></span>
+        </nav>
+        <script type='application/ld+json'>
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "@id": "#Breadcrumb",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "name": "<data:messages.home/>",
+              "@id": "<data:blog.homepageUrl.jsonEscaped/>"
+            }
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "name": "<b:if cond='data:post.labels'><data:post.labels.first.name/></b:if>",
+              "@id": "<data:post.labels.first.url.jsonEscaped/>"
+            }
+          },{
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "name": "<data:post.title/>",
+              "@id": "<data:post.url.jsonEscaped/>"
+            }
+          }]
+        }
+      </script>
+    </b:includable>
+    </b:defaultmarkup>    
+    
+    <!-- K Fungsi Komen -->
+
+    <!-- Komentar Judul -->
+  
+    <!-- /K Fungsi Komen-->
+    <b:defaultmarkup type='Blog, PopularPosts'>
+      <!-- B Judul Post-->
+      <b:includable id='PostTitle' var='x'>
+        <b:if cond='data:view.isMultipleItems'>
+          <h3 class='PostTitle entry-title'><a expr:href="data:x.url"><data:x.title /></a></h3>
+        <b:else/>
+          <h1 class='PostTitle entry-title'><data:x.title /></h1>
+        </b:if>
+
+      </b:includable>
+    
+    </b:defaultmarkup>
+    <!-- WIDGET -->
+    <b:defaultmarkup type="PopularPosts">
+    	<b:includable id="main" var="x">
+	    	<b:include name="title" data="data:title"/>
+	      <div class="widget-content"> 
+	      	<div class="pops">
+	    			<b:loop values="data:posts" var="x" index="i">
+	      			<div class='isi'>
+                <div expr:class='&quot;garis &quot; + data:x.labels.first.name'></div>
+	      				<div class="gambar">
+			      			<img expr:src='resizeImage(data:x.featuredImage, 100, "1:1")' />	      				
+	      				</div>
+	      				<div class="judul">
+	      				
+		      				<h4>
+                    <a expr:href='data:x.url'>
+                      <b:eval expr='data:x.title snippet {length: 10}' />                  
+                    </a>
+                  </h4>
+                  <b:comment>
+		      				<div class='labelpops'>
+			      				<b:loop values='data:x.labels' var='y'>
+			      					<span ><b:evaldata:y.name /> /</span>
+			      				</b:loop>
+			      			</div>
+                  </b:comment>
+		      			</div>
+
+	      			</div>
+	      		</b:loop>
+	      	</div>
+       </div>
+
+    	</b:includable>
+    </b:defaultmarkup>
+
+    <!-- W Labels -->
+    <b:defaultmarkup type="Label">
+      <b:includable id="main">
+        <b:include name="title" data="data:title"/>
+        <b:class name='bels' />
+        <ul>
+          <b:loop values='data:labels' var='l' index='i'>
+            <li expr:class='data:l.name'><a expr:href='data:l.url'>
+              <data:l.name /></a></li>
+          </b:loop> 
+        </ul>
+      </b:includable>
+    </b:defaultmarkup>
+    
+  </b:defaultmarkups>
+
+<!-- JS -->
+<script async='async' src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'/>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: &quot;ca-pub-5665035628787532&quot;,
+          enable_page_level_ads: true
+     });
+</script>
+
+</head>
+<body>
+	<div class="atas">
+	<nav class="container">
+    <b:comment>
+    <div class="pencarian">
+      <form><input type="text" placeholder="Pencarian..." name="" /></form>
+    </div>
+    </b:comment>
+    <ul class="nav">
+      <li><a expr:href="data:blog.homepageUrl" class='active'>Home</a></li>
+      <li><a href="">Profil</a></li>
+      <li><a href="">Download</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">Sitelink</a></li>
+    </ul>
+    <a onclick="bukasitik()" class='menuhp'><i class="fa fa-home"></i> Menu</a>
+  </nav>
+	</div>
+
+	<div id="wrapper" class="container">
+    <b:comment>
+		<header>
+			<b:section id='header' showaddelement='yes' visible="true">
+			</b:section> 
+		</header>
+  </b:comment>
+		<main>
+			<b:section id='main' showaddelement='yes'>
+      	<b:widget id='Blog1' type='Blog'/>
+    	</b:section>
+		</main>
+		<aside>
+			<b:section id='aside' showaddelement='yes'>
+				<b:widget id='PopularPosts1' type='PopularPosts' title='Artikel Teratas' />
+				<b:widget id='Label1' type='Label' title="Kategori" /> 
+			</b:section>
+		</aside>
+    
+  <footer class='fluid'><h2>Copyright 2019 <a href="krotopal@gmail.com">Jabbar Bie</a> All Right Reserved - Powered by Blogger</h2></footer>
+  </div>  
+
+</body>
+</html>
