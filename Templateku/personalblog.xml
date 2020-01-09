@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html b:css='false' b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&amp;display=swap" rel="stylesheet" /> 
+  <b:skin version='1.3.0'><![CDATA[ 
+  /*
+  <Variable name="maincolor" description="Background Body" type="color" default="#fff" value="#33313b" /> 
+  <Variable name="secondcolor" description="Background Body" type="color" default="#fff" value="#f30067" /> 
+  <Variable name="forgetcolor" description="Background Body" type="color" default="#fff" value="#eaeaea" /> 
+  <Variable name="hovercolor" description="Background Body" type="color" default="#fff" value="#4592af" /> 
+
+  */
+
+  /*! STYLE DI SINI */
+  body {
+  	margin: 0; 
+  	padding: 0;
+  	font-family: 'Raleway', sans-serif;
+    color: #fff;
+  }
+  a {text-decoration: none; color: #ddd}
+  ul {list-style: none; padding: 0; margin: 0}
+  #wrapper {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+  aside {
+    flex: 0 20%;
+    background-color: $maincolor;
+    text-align: right;
+    padding: 2%;
+  }
+  main {
+
+  }
+  footer {}
+  aside h1, h4 {line-height: 0.3; color: $hovercolor; font-family: 'Oswald', sans-serif; letter-spacing: 1; text-align: center}
+  aside ul {width: 100%}
+  aside ul li {display: block;}
+  aside ul li a {
+    display: block;
+
+  }
+  aside ul li a:color {color: $hovercolor}
+
+  .menu {margin-top: 15%}
+  ]]>
+  </b:skin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "email": "krotopal@gmail.com",
+    "image": "https://1.bp.blogspot.com/-NJ51GU_cBn8/XRFAGNcG_8I/AAAAAAAAPxw/iPOJXA703t0TThAnKApINUU7PN5fOBKQwCLcBGAs/s1600/IMG_20161218_053940.jpg",
+    "jobTitle": "Programmer",
+    "name": "Fauzi Jabbar Faisal",
+    "alumniOf": "SMK Dharma Siswa",
+    "birthPlace": "Sidoarjo",
+    "birthDate": "1993.03.27",
+    "gender": "female",
+    "nationality": "Indonesia",
+    "telephone": "0895615912993",
+    "url": "http://fauzijabbar.blogspot.com",
+    "sameAs" : [ "https://www.facebook.com/jabbar.bie",
+    "https://www.linkedin.com/in/fauzi-jabbar-494656170/",
+    "http://twitter.com/jabbarbie",
+    "http://instagram.com/biejabbar"]
+  }
+</script>
+</head>
+<body>
+  <div id="wrapper">
+    <aside>
+      <h1>Fauzi Jabbar Faisal</h1>
+      <h4>UI/Programmer In Indonesia</h4>
+      <ul class='menu'>
+        <li><a expr:href='data:blog.url'>Home</a></li>
+        <li><a href='/p/aboutme.html'>About</a></li>
+        <li><a href='/p/portofolio.html'>Portofolio</a></li>
+        <li><a href='/p/blog.html'>Blog</a></li>
+        <li><a href='/p/contact.html'>Contact</a></li>
+
+      </ul>
+    </aside>
+    <main>
+      Main
+      <b:section id='Main' showaddelement='yes'>
+      </b:section>
+    </main>
+  </div>
+
+</body>
+</html>

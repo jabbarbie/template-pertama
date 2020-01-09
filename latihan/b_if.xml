@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin version='1.3.0'> <![CDATA[
+	/* Definisi Variable nya Disini  
+  	
+  	*/
+  		
+  		
+	]]></b:skin>
+
+</head>
+<body>
+  <b:section id="NamaID" showaddelement="yes" name="Tempat Menambahkan Widget">
+  </b:section>
+</body>
+</html>
+
+<!--
+<b:if cond="">
+</b:if>
+
+<b:elseif cond="">
+</b:elseif>
+
+<b:else>
+</b:else>
+
+
+// contoh
+
+<b:if cond="data:view.isHomepage">
+   <h1>Ini Halaman Beranda</h1>
+  <b:elseif cond="data:view.isPost" />
+    <h1>Ini Halaman Post</h1>
+  <b:else />
+    <h1>Ini Halaman Default Jika Tidak Ditemukan </h1>
+
+</b:if>
+
+
+
+// Or And
+<b:if cond="data:view.isHomepage or data:view.isPage">
+  <data:post.body>
+</b:if>
+
+== != 
+<b:if cond="data:post.title == "">
+  <h1>Judul Kosong</h1>
+</b:if>
+
+-->

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin version='1.3.0'> <![CDATA[
+	/* Definisi Variable nya Disini  
+  	
+  	*/
+  		
+  		
+	]]></b:skin>
+
+</head>
+<body>
+  <b:section id="NamaID" showaddelement="yes" name="Tempat Menambahkan Widget">
+  </b:section>
+</body>
+</html>
+
+<!--
+b:defaulltmarkups => seperti class
+b:defaultmarkup => seperti fungsi/methodnya
+
+<b:defaultmarkup type="">
+type => nama widget yg mau di deklaraikan ulang.. misalnya Blog, Header, PupolarPosts
+
+ada 1 type namanya Common
+tipe common dapat digunakan secara global 
+
+contoh
+<b:defaultmarkups>
+  
+  <b:defaultmarkup type="Common">
+    
+    <b:includable id="satekambing">
+      <div>Hai Bosque</div>
+    </b:includable>
+
+    <b:includable id="jabbarbie">
+      <div>Hai Namaku Jabbar</div>
+    </b:includable>
+  
+  </b:defaultmarkup>
+
+  <b:defaultmarkup type="Header"></b:defaultmarkup>
+  <b:defaultmarkup type="Blog"></b:defaultmarkup>
+
+</b:defaultmarkups>
+
+// pemanggilannya kalau common itu langsung
+
+<b:include name="satekambing" />
+<b:include name="jabbarbie" />
+sama seperti 
+
+class common{
+  function satekambing(){
+    echo "Hao Bosque"
+  }
+}
+
+echo common->satekambing();
+
+
+/////////////// fungsi bawaan yg dimiliki widget /////////////////
+contoh ini seperti magic function yg ada pada kebanyakan bahasa pemrograman
+atau fungsi yg sudah dideklarasikan oleh blogger sebelumnya..
+dan kita hanya perlu mengoverwrite / menulis ulang jika dibutuhkan
+misalnya main.. yg ada disetiap widget
+
+<b:defaultmarkups>
+  
+  <b:defaultmarkup type="Label">
+    <b:includable id="main">
+      --- Lakukan Perubahan __construct Label di sini --
+    </b:includable>
+  </b:defaultmarkup>
+
+</b:defaultmarkups>
+
+/// in other language nya
+
+class label{
+  function main(){
+    echo "<div> ini bawaan blogger untuk main </div>"
+  }
+  function content(){
+    echo "<div> ini bawaan blogger untuk content </div>"
+  } 
+}
+
+kemudia user mendeklarasikan defaultmarkup untuk type label
+itu seperti...
+
+class fungsibaru extends label{
+  function main(){
+    echo "Ini fungsi baru dari yg user deklarasikan ulang"
+  }
+}
+
+
+defaultmarkup => type
+includable => id
+
+-->
+
+<!--
+Pemanggilan includable juga bisa memanggil sub bagianya..
+misalnya widget-title untuk mengeksekusi title tiap widget
+
+common....
+<b:includable id="widget-title">
+
+-->

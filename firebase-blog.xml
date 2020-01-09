@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin><![CDATA[ 
+	/* Definisi Variable nya Disini  
+  	
+  	*/
+    		
+	]]></b:skin>
+
+
+<script src='https://www.gstatic.com/firebasejs/5.8.2/firebase.js'/>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: &quot;AIzaSyDdvZafI0putL8_atHU5YUjnqKp-qFaKHA&quot;,
+    authDomain: &quot;penerbit-spekta.firebaseapp.com&quot;,
+    databaseURL: &quot;https://penerbit-spekta.firebaseio.com&quot;,
+    projectId: &quot;penerbit-spekta&quot;,
+    storageBucket: &quot;penerbit-spekta.appspot.com&quot;,
+    messagingSenderId: &quot;343359262376&quot;
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+<b:section id='sate'/>
+	<table id='tableku'>
+		<tr>
+			<td>#</td>
+			<td>Nama</td>
+			<td>Penulisa</td>
+			<td>ISBN</td>
+			<td>Harga PO</td>
+			<td>Harga Normal</td>
+		</tr>
+	</table>
+		
+
+<script>
+	var datax, data, i = 1;
+    var tableku = document.getElementById(&quot;tableku&quot;);
+	datax = firebase.database();
+    data = datax.ref(&quot;Arsip Buku&quot;).orderByChild(&#39;1&#39;);
+
+    data.on(&#39;value&#39;, sukses, gagal);
+
+    function sukses(data){
+    	data.forEach(function(tablenya, index){
+    		var nama = tablenya.val()[1].toString(),
+    			penulis = tablenya.val()[2].toString(),
+    			isbn = tablenya.val()[3].toString(),
+    			po = tablenya.val()[7].toString(),
+    			normal = tablenya.val()[8].toString()
+    			;
+
+    		if(nama){
+    			var r = tableku.insertRow(1);
+    			r.insertCell(0).innerHTML = i;
+	    		r.insertCell(1).innerHTML = nama;
+	    		r.insertCell(2).innerHTML = penulis;
+	    		r.insertCell(3).innerHTML = isbn;
+	    		r.insertCell(4).innerHTML = po;
+	    		r.insertCell(5).innerHTML = normal;
+    		}
+    		i++;
+    	});
+
+    }
+    function gagal(data){
+    	console.log(&quot;gagal&quot;);
+    }
+
+    
+	</script>	
+</body>
+</html>

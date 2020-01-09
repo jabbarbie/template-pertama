@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#db5945">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Menu Navigasi</title>      
+    <style>
+    body {margin: 0; padding: 0; font-size: 14px; font-family: Arial}
+    ul, li {display: block; padding: 0; margin: 0;}
+    .wrapper {width: 80%; margin: 0 auto}
+    ul {
+      width: 100%;
+      list-style: none;
+    }
+    /*! NAV */
+    nav {
+      /*position: sticky;*/
+      /*top: 0;*/
+      display: flex;
+      flex-direction: space-between;
+      background-color: #333;
+      overflow: hidden;
+      flex-direction: row-reverse;
+    }
+    .nav {
+      display: flex;
+      overflow: hidden;
+    }
+    .nav a, .menuhp {
+      display: block;
+      text-decoration: none;
+      color: #f2f2f2;
+      padding: 0.8em;
+      font-size: 0.9rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .menuhp {display: none}
+
+    nav form > input[type="text"]{
+      border: none;
+      margin: 0;
+      padding: 0.9em;
+      background-color: #666;
+      color: white;
+    }
+    .nav a:hover {background-color: #4CAF50; color: white}
+    /*! END NAV */
+    @media (max-width: 992px){
+      /*! Semuanya Kecuali Home akan di hide */
+      /*.nav li:not(:last-child){}*/
+      header {display: none}
+      .nav {display: none;}
+
+      .menuhp {display: block; background-color: #4CAF50}    
+      .nav {flex-wrap: wrap;}
+      .nav li {flex: 0 50%;}
+
+      nav {flex-wrap: wrap; flex-direction: column;}
+      nav form > input[type="text"]{
+        width: 100%;
+      }
+      .wrapper {width: 100%}      
+
+      .bukasitik {
+        display: flex;
+      }
+    }
+    @media (max-width: 768px){
+      /*! Tablet - Pablet */
+    }
+    @media (max-width: 576px){
+      /*! HP */
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <div class='wrapper' style="">
+      <header style="background-color: purple; height: 200px"></header>
+      <nav>
+        <div class="pencarian">
+          <form><input type="text" placeholder="Pencarian..." name=""></form>
+        </div>
+        <ul class="nav">
+          <li><a href="">Home</a></li>
+          <li><a href="">Profil</a></li>
+          <li><a href="">Download</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">Sitelink</a></li>
+        </ul>
+        <a onclick="bukasitik()" class='menuhp'><i class="fa fa-home"></i> Menu</a>
+
+      </nav>
+      <main style="font-size: 3em; color : #aaa; background-color: gray">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      </main>
+      <aside></aside>
+      <footer></footer>
+    </div>
+    <script type="text/javascript">
+      let bukasitik = (e) => {
+        var menu = document.getElementsByClassName("nav");
+        if(menu[0].className === "nav"){
+          menu[0].className += " bukasitik";
+        }else{
+          menu[0].className = "nav";
+        }
+        console.log(menu);
+      }
+    </script>
+  </body>
+</html>
+</html>

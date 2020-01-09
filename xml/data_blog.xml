@@ -1,0 +1,55 @@
+https://bloggercode-blogconnexion.blogspot.com
+<xml>
+	<data:blog /> object
+		<data:blog.bloggerUrl /> String
+		<data:blog.Id /> String
+
+
+
+		<data:blog.adsenseClientId /> String
+		<data:blog.adsenseHasAds /> Bool
+		<data:blog.adsenseHostId /> Bool
+		<data:blog.adultContent /> Bool
+		<data:blog.analyticsAccountNumber /> String
+
+</xml>
+data:blog.title
+data:blog.url
+data:blog.pageType
+data:blog.homepageUrl
+data:blog.pageName
+data:blog.pageTitle
+data:blog.view
+
+data:blog.postImageThumbnailUrl
+data:blog.postImageUrl
+data:blog.searchUrl
+data:blog.sharing
+
+
+data:blog.isMobileRequest
+data:blog.languageDirection
+data:blog.locale
+
+
+data:blog.mobileHeadScript
+data:blog.mobileClass
+data:blog.meTag
+data:blog.metaDescription
+data:blog.localeUnderscoreDelimited
+data:blog.latencyHeadScript
+data:blog.isPrivate
+data:blog.isPrivateBlog
+
+data:blog.jumpLinkMessage
+data:blog.httpsEnabled
+data:blog.ieCssRetrofitLinks
+
+data:blog.blogspotFaviconUrl
+data:blog.disableGComments
+data:blog.dynamicViewsCommentsSrc
+data:blog.enabledCommentProfileImages
+data:blog.encoding
+data:blog.feedLinks
+data:blog.hasCustomDomain
+data:blog.hasCustomJumpLinkMessage

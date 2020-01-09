@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html>
 <head>
-  <b:include data='blog' name='all-head-content'/>
-  <title><data:blog.pageTitle/></title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <b:skin version='1.3.0'> <![CDATA[
-  /* Definisi Variable nya Disini  
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin> <![CDATA[
+	/* Definisi Variable nya Disini  
+  	
   */
 
-  .Header{
-    background-color: #efefef;
+  body {
+    padding :  0;
+    margin: 0;
+  }
+  header {
+    width: 80%;
+    margin: 0 auto;
+  }
+  /* Header 
+    #header-inner => Keseluruhan, Di dalamnya ada
+
+      .titlewrapper 
+        .title
+      .descriptionwrapper
+        .description
+  */
+
+  #header-inner {
+    background-color: skyblue
+
   }
 
-  .Header h1 {
-    font-size: 2em;
+  .titlewrapper {
+    background-color: green
+  }
+
+  .title {
+    background-color: red
+  }
+  .descriptionwrapper {
+    background-color: yellow;
     padding: 0;
     margin: 0;
   }
-
-  .Header p {
-    color: green;
-    padding: 0;
-    margin: 0;
+  .description {
+    background-color  : pink;
+    
   }
-      
-      
-  ]]></b:skin>
+
+	]]></b:skin>
 </head>
 <body>
-  <b:section id="NamaID" showaddelement="yes" >
-    <b:widget id="Header1" type="Header" title="Bagian Header"></b:widget>
-  </b:section>
+  <header>
+    <b:section id="NamaID" showaddelement="yes" >
+      <b:widget id="Header1" type="Header" title="header"></b:widget>
+    </b:section>
+  </header>
 </body>
 </html>
 
-
-<!--
-.header
-  h1
-  p
-
-<data:title />	
-<data:description />
--->

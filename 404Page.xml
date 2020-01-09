@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html b:css='false' b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+  <b:skin version='1.3.0'><![CDATA[ 
+  /*
+  <Variable name="bgcolor" description="Background Body" type="color" default="#f0f1f2" value="#f0f1f2" /> 
+  */
+
+  /*! STYLE DI SINI */
+  
+  ]]>
+  </b:skin>
+  <b:defaultmarkups>
+  	<b:defaultmarkup type="Blog">
+  		<b:includable id="main">
+  			<b:include name='cekHalaman' data='data:posts'/>
+  		</b:includable>
+
+  		<b:includable id='cekHalaman'>
+  			<!-- 	view.search.query 
+							view.search.label
+							view.isArchive
+							view.isError
+							isMultipleItems and data:posts.empty
+  			-->		
+  			<b:if cond='data:view.isError'>
+  				<div class="viewError">
+  					<h1>404 NotFound ~ Nyari apa Bosque</h1>
+  					<h4><data:messages.theresNothingHere/></h4>
+            <p><data:navMessage/></p>
+  				</div>
+  			</b:if>
+  			<b:if cond='data:view.search.label'>
+  				<b:if cond='data:posts.empty'>
+  					<div class="viewPencarian">
+  						
+  					</div>
+  				<b:else/>
+  				</b:if>
+  			</b:if>
+  		</b:includable>
+  	
+  	</b:defaultmarkup>
+  </b:defaultmarkups>
+</head>
+<body>
+  <div id="wrapper" class="container">
+    <main>
+      <b:section id='Main' showaddelement='yes'>
+        <b:widget id='Blog1' type='Blog'/>
+      </b:section>
+    </main>
+  </div>
+
+</body>
+</html>

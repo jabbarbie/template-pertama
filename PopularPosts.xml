@@ -39,10 +39,10 @@
     background-color: maroon;
     padding: 1%;   
   }
-
+  .widget-content .post-title a{
     color: #fff;
     text-decoration: none;
-
+  }
   .widget-content .post-snippet {
     background-color: pink;
     padding: 1%;    
@@ -50,6 +50,8 @@
 
 
 	]]></b:skin>
+
+
 </head>
 <body>
   <b:section id="NamaID" showaddelement="yes" >

@@ -1,0 +1,39 @@
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"LiveBlogPosting",
+  "@id":"<data:x.url.canonical.jsonEscaped />",
+  "about":{
+    "@type":"WebPage",
+    "startDate":"<data:x.date.iso8601.jsonEscaped />",
+    "name":"<data:x.title.jsonEscaped />"
+  },
+  "coverageStartTime":"<data:x.date.iso8601.jsonEscaped />",
+  "coverageEndTime":"<data:x.date.jsonEscaped />",
+  "headline":"<data:x.title.jsonEscaped />",
+  "description":"<b:eval expr='(data:x.snippets.short snippet {links: false, linebreaks: false, ellipsis: true}).jsonEscaped' />",
+  "liveBlogUpdate":[
+    {
+      "@type":"BlogPosting",
+      "headline":"Coming this April, HBO NOW will be available exclusively in the U.S. on Apple TV and the App Store.",
+      "datePublished":"2015-03-09T13:08:00-07:00",
+      "articleBody": "It's $14.99 a month.<br> And for a limited time, …"
+    },
+    {
+      "@type":"BlogPosting",
+      "headline":"iPhone is growing at nearly twice the rate of the rest of the smartphone market.",
+      "datePublished":"2015-03-09T13:13:00-07:00",
+      "image":"http://images.apple.com/live/2015-mar-event/images/573cb_xlarge_2x.jpg"
+    },
+    {
+      "@type":"BlogPosting",
+      "headline":"See the new flagship Apple Retail Store in West Lake, China.",
+      "datePublished":"2015-03-09T13:17:00-07:00",
+      "video":{
+        "@type":"VideoObject",
+        "thumbnail":"http://images.apple.com/live/2015-mar-event/images/908d2e_large_2x.jpg"
+      }
+    }
+  ]
+}
+</script>

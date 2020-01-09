@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+
+  <b:skin version='1.3.0'> <![CDATA[
+  /* Definisi Variable nya Disini  
+    
+  */
+      
+      
+  ]]></b:skin>
+
+  <b:defaultmarkups>
+    <b:defaultmarkup type="Blog">
+
+      <!-- BLOG : SNIPPET TANPA GAMBAR -->
+      <b:includable id='postSnippet' var="p">
+        <div expr:class='(data:snippetPrefix ?: "post") + "-snippet snippet-container r-snippet-container"'>
+          <div class='snippet-item r-snippetized'>
+            <b:eval expr='data:p.body snippet { lenght: 5, links: false, linebreaks: false, ellipsis: false }'/>
+            <!--
+              kataygmauditampilkan snippet {length: number, linebreaks: bool, ellipsis: bool} 
+                length: minimal 50 huruf
+                ellipsis: mau ngasih ... atau tidak diujung kata
+                linebreaks: mau menghilangkan breakline / br atau tidak
+                links: mau menghilangkan link atau tidak
+            -->
+          </div>
+          <a class='snippet-fade r-snippet-fade hidden' expr:href='data:post.url'/>
+        </div>
+      </b:includable>
+
+      <!-- BLOG : SNIPPET DENGAN GAMBAR -->
+      <b:includable id='postBodySnippet' var='post'>
+        <div class='container post-body entry-content' expr:id='"post-snippet-" + data:post.id'>
+
+          <!-- <b:comment > -->
+          <b:if cond='data:post.featuredImage'>
+            <div class='snippet-thumbnail'>
+              <b:include data='{ image: data:post.featuredImage, imageSizes: [32, 64, 128, 256], imageRatio: "1:1", sourceSizes: "(max-width: 800px) 12vw, 256px" }' name='responsiveImage'/>
+
+              <!--
+                data => Buat array, 
+                          image => sumber gambar diambil dari data:post.featuredImage
+                          buatlist untuk ukuran => 32..256
+                          rasionya => 1:1 biar ngotak
+                          sourceSizes => tentukan size yg sudah dibuat tadi.. disini 256 diambil dari array imageSize
+              -->
+            </div>
+          </b:if>
+          <!-- </b:comment> -->
+          <!-- <b:include cond='data:post' data='post' name='postSnippet'/> -->
+          <!-- <b:eval expr='data:post.body snippet {length: 100, linebreaks: false, ellipsis: false}' /> -->
+          <!-- Pemanggilan Snippet  
+
+              kataygmauditampilkan snippet {length: number, linebreaks: bool, ellipsis: bool} 
+                length: minimal 50 huruf
+                ellipsis: mau ngasih ... atau tidak diujung kata
+                linebreaks: mau menghilangkan breakline / br atau tidak
+                links: mau menghilangkan link atau tidak
+
+          -->
+        </div>
+      </b:includable>
+
+      <!-- BLOG - ISI POST -->
+      <b:includable id="isiPost" var="x">
+        <b:comment>
+        <h2><a expr:href="data:x.url"><data:x.url /></a></h2>
+        <div>
+          <data:x.footer />
+        </div>
+        </b:comment>
+  
+        <b:include data="x" name="postMeta" />
+        <!-- <b:include data="x" name="postHeader" />  -->
+
+        <b:if cond="data:view.isMultipleItems"> <!-- Jika Beranda -->
+          <b:include data="x" name="postTitle" />
+          <b:include data="x" name="postBodySnippet" />
+
+        
+        <b:else/>
+          <b:comment><b:include data="x" name="postCommentsAndAd" /></b:comment><!-- Jika SingleItem -->
+          <!-- <b:include name='feedLinks' />   -->
+        </b:if>
+
+        <b:include data="x" name="postFooter" />
+      </b:includable>
+
+      <!-- PAGGINATION -->
+      <b:includable id="Paggination">
+          <!--- Next Prev -->
+          <div class='blog-pager container' id='blog-pager'>
+                <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+                <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+                <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+          </div>  
+      </b:includable>
+    </b:defaultmarkup>
+
+  </b:defaultmarkups>
+</head>
+<body>
+  <b:section id="NamaID" showaddelement="yes" name="Tempat Menambahkan Widget">
+    <b:widget id="Blog1" type="Blog">
+
+
+      <b:includable id="main" var="this">
+        <!-- Kasih Class - Karena Kalo nggak ya gk ada classnya -->
+        <div class='blog-posts hfeed container'>
+
+          <!-- Tambahkan class baru untuk div di atas, jika posisi di halaman beranda / detail post -->
+          <b:class cond='data:view.isMultipleItems' name='index-post-wrap'/>
+          <b:class cond='data:view.isSingleItem' name='item-post-wrap'/>          
+
+          <!-- Perulangan untuk post usahakan di sini.. jangan melakukan perulangan dalam fungsi -->
+          <b:loop values="data:posts" var="x">
+            <b:include data="x" name="isiPost" />    
+              <!-- <p class='post-snippet'><b:eval expr='data:x.snippets.short snippet { length: 87 }'/></p> -->
+
+          </b:loop>
+
+          <!-- Paggination Next & Preview -->
+          <b:include name="Paggination" />
+        </div>
+      </b:includable>
+
+      
+
+    </b:widget>
+  </b:section>
+</body>
+</html>
+

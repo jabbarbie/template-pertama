@@ -1,0 +1,9 @@
+<xml>
+  <!-- Global -->
+  <data:title /> <!-- get judul dari blog-->
+  <data:description /> <!-- get description blog-->
+
+  <!-- atau  -->
+  <data:blog.title />
+  <data:blog.description />
+</xml>

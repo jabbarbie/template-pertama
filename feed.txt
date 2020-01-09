@@ -1,0 +1,12 @@
+by labels
+
+feeds/posts/default/-/manga?
+
+parameternya
+orderby : updated, published
+alt : json, json-in-script
+callback : bebas
+max-results : integer
+
+contoh
+feeds/posts/default/-/overpower?alt=json-in-script&callback=relatedpost&max-results=5

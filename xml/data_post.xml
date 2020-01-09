@@ -1,0 +1,86 @@
+Hanya dapat digunakan dalam widget Blog dan PopularPosts
+
+data:posts 
+
+id: string,
+title: string,
+body: string,
+snippet: string,
+longSnippet: string,
+url: URL,
+link: string,
+thumbnailUrl: string,
+firstImageUrl: string,
+date: string,
+dateHeader: string,
+timestamp: string,
+timestampISO8601: string,
+lastUpdatedISO8601: string,
+author: string,
+authorUrl: string,
+authorProfileUrl: string,
+authorAboutMe: string,
+authorPhoto: {object},
+hasJumpLink: boolean,
+jumpText: string,
+isFirstPost: boolean,
+isDateStart: boolean,
+adminClass: string,
+editUrl: string,
+allowComments: boolean,
+allowNewComments: boolean,
+noNewCommentsText: string,
+numComments: number,
+commentLabelFull: string,
+addCommentUrl: URL,
+addCommentOnclick: string,
+commentPagingRequired: boolean,
+hasOlderLinks: boolean,
+oldLinkClass: string,
+oldestLinkUrl: URL,
+oldestLinkText: string,
+olderLinkUrl: URL,
+olderLinkText: string,
+hasNewerLinks: boolean,
+newLinkClass: string,
+newerLinkUrl: URL,
+newerLinkText: string,
+newestLinkUrl: URL,
+newestLinkText: string,
+commentRangeText: string,
+commentFormIframeSrc: string,
+embedCommentForm: boolean,
+showThreadedComments: boolean,
+commentFeed: URL,
+commentHtml: string,
+avatarIndentClass: string,
+includeAd: boolean,
+emailPostUrl: string,
+sharePostUrl: string,
+reactionsUrl: string,
+cmtfpIframe: string,
+appRpcRelayPath: string,
+location: {object},
+
+labels: [array],
+feedLinks: [array],
+comments: [array],
+enclosures: [array]
+
+
+
+// untuk popularpost
+  id: string,
+  href: URL,
+  title: string,
+  snippet: string,
+  thumbnail: image
+  featuredImage: image
+
+  
+menampilkan label
+<b:loop values=data:posts var=artikel>
+	<b:loop values=data:artikel.labels var=label>
+		<data:label.name />
+	</b:loop>
+</b:loop>

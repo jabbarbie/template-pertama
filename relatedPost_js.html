@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Related Post JS</title>
+</head>
+<body>
+<script type="text/javascript">
+function sate(data){
+	let entry = data.feed.entry || 0;
+	if (entry == 0){console.log('Label 404'); return false};
+	var post = [];	
+	for (var i = entry.length - 1; i >= 0; i--) {
+		post[i] = {};
+		post[i].title = entry[i].link[4].title;
+		post[i].url = entry[i].link[4].href;
+		post[i].thumbnail = entry[i].media$thumbnail.url;
+	}
+	console.log(post);
+}
+</script>
+<script type="text/javascript" src="https://asadako-kun.blogspot.com/feeds/posts/summary/-/Manga?max-results=5&alt=json-in-script&callback=sate"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<b:widget id='Blog1'
+          title='WIDGET_TITLE'
+          type='Blog'
+          version='2'>
+
+  <!-- SETTINGS -->
+  <b:widget-settings></b:widget-settings>
+
+  <!-- DEFAULT VERSION - EXPLICIT AND SERVER -->
+  <b:includable id='main' var='this'></b:includable>
+  <b:includable id='aboutPostAuthor'></b:includable>
+  <b:includable id='addComments'></b:includable> <!-- link Posting Komentar -->
+  <b:includable id='commentAuthorAvatar'></b:includable> <!-- Avatar User -->
+  <b:includable id='commentDeleteIcon' var='comment'></b:includable><!-- -->
+  <b:includable id='commentForm' var='post'></b:includable>
+  <b:includable id='commentFormIframeSrc' var='post'></b:includable>
+  <b:includable id='commentItem' var='comment'></b:includable>
+  <b:includable id='commentList' var='comments'></b:includable>
+  <b:includable id='commentPicker' var='post'></b:includable>
+  <b:includable id='comments' var='post'></b:includable>
+  <b:includable id='commentsTitle'></b:includable>
+  
+  <b:includable id='feedLinks'></b:includable>
+  <b:includable id='feedLinksBody' var='links'></b:includable>
+  <b:includable id='homePageLink'></b:includable>
+  <b:includable id='inlineAd' var='post'></b:includable>
+  <b:includable id='nextPageLink'></b:includable>
+  <b:includable id='post' var='post'></b:includable>
+    <b:includable id='postTitle' var='post'></b:includable> <!-- Judul Post -->
+    <b:includable id='postHeader' var='post'></b:includable> <!-- Tanggal, Waktu Post-->
+    <b:includable id='postBody' var='post'></b:includable> <!-- Semua isi Post => Digunakan di isViewItem/jika post dibuka/single post -->
+    <b:includable id='postBodySnippet' var='post'></b:includable> <!-- Snippet dengan gambar -->
+    <b:includable id='postSnippet' var='post'></b:includable> <!-- Snippet tanpa gambar -->
+    <b:includable id='postCommentsAndAd' var='post'></b:includable> <!-- Include Post beserta ads dan comment-->
+    <b:includable id='postCommentsLink'></b:includable>
+    <b:includable id='postFooter' var='post'></b:includable>
+    <b:includable id='postFooterAuthorProfile' var='post'></b:includable>
+
+    <b:includable id='postJumpLink' var='post'></b:includable>
+    <b:includable id='postMeta' var='post'></b:includable> <!-- Include semua meta tiap post -->
+    <b:includable id='postPagination'></b:includable>
+  <b:includable id='previousPageLink'></b:includable>
+  <b:includable id='threadedCommentForm' var='post'></b:includable>
+  <b:includable id='threadedComments' var='post'></b:includable>
+  snippets.short
+  <!-- DEFAULT VERSION - SERVER -->
+  <b:includable id='commentsLink'></b:includable>
+  <b:includable id='defaultAdUnit'></b:includable>
+  <b:includable id='emailPostIcon'></b:includable>
+  <b:includable id='footerBylines'></b:includable>
+  <b:includable id='footerBylinesOverride'></b:includable>
+  <b:includable id='headerByline'></b:includable>
+  <b:includable id='headerBylineOverride'></b:includable>
+  <b:includable id='maybeAddShareButtons'></b:includable>
+  <b:includable id='otherSharingButton'></b:includable>
+  <b:includable id='postAuthor'></b:includable>
+  <b:includable id='postCommentsLink'></b:includable>
+  <b:includable id='postJumpLink'></b:includable>
+  <b:includable id='postLabels'></b:includable>
+  <b:includable id='postLocation'></b:includable>
+  <b:includable id='postMetadataJSON'></b:includable>
+  <b:includable id='postReactions'></b:includable>
+  <b:includable id='postShareButtons'></b:includable>
+  <b:includable id='postSnippet'></b:includable>
+  <b:includable id='postTimestamp'></b:includable>
+  <b:includable id='sharingButton'></b:includable>
+  <b:includable id='sharingButtonContent'></b:includable>
+  <b:includable id='sharingButtons'></b:includable>
+  <b:includable id='sharingButtonsMenu'></b:includable>
+  <b:includable id='sharingPlatformIcon'></b:includable>
+
+  <!-- MARKUPS - EXPLICIT IN CONTEMPO -->
+  <b:includable id='main'></b:includable>
+  <b:includable id='commentsLink'></b:includable>
+  <b:includable id='defaultAdUnit'></b:includable>
+  <b:includable id='feedLinks'></b:includable>
+  <b:includable id='headerByline'></b:includable>
+  <b:includable id='homePageLink'></b:includable>
+  <b:includable id='inlineAd' var='post'></b:includable>
+  <b:includable id='nextPageLink'></b:includable>
+  <b:includable id='postBodySnippet' var='post'></b:includable>
+  <b:includable id='postFooter' var='post'></b:includable>
+  <b:includable id='postFooterJumpLink' var='post'></b:includable>
+  <b:includable id='postJumpLink'></b:includable>
+  <b:includable id='postLabels'></b:includable>
+  <b:includable id='postShareButtons'></b:includable>
+  <b:includable id='previousPageLink'></b:includable>
+  <b:includable id='snippetedPostByline'></b:includable>
+
+  <!-- MARKUPS - EXPLICIT IN EMPORIO -->
+  <b:includable id='main'></b:includable>
+  <b:includable id='commentsLink'></b:includable>
+  <b:includable id='defaultAdUnit'></b:includable>
+  <b:includable id='feedLinks'></b:includable>
+  <b:includable id='footerBylines'></b:includable>
+  <b:includable id='headerByline'></b:includable>
+  <b:includable id='homePageLink'></b:includable>
+  <b:includable id='inlineAd' var='post'></b:includable>
+  <b:includable id='nextPageLink'></b:includable>
+  <b:includable id='post' var='post'></b:includable>
+  <b:includable id='postBodySnippet' var='post'></b:includable>
+  <b:includable id='postCommentsAndAd'></b:includable>
+  <b:includable id='postJumpLink' var='post'></b:includable>
+  <b:includable id='postLabels'></b:includable>
+  <b:includable id='postShareButtons' var='post'></b:includable>
+  <b:includable id='postTitle' var='post'></b:includable>
+  <b:includable id='postWrapperClasses'></b:includable>
+  <b:includable id='previousPageLink'></b:includable>
+  <b:includable id='snippetedPostThumbnail'></b:includable>
+
+  <!-- MARKUPS - EXPLICIT IN NOTABLE -->
+  <b:includable id='main' var='this'></b:includable>
+  <b:includable id='commentsLink'></b:includable>
+  <b:includable id='defaultAdUnit'></b:includable>
+  <b:includable id='feedLinks'></b:includable>
+  <b:includable id='footerBylines'></b:includable>
+  <b:includable id='headerByline'></b:includable>
+  <b:includable id='homePageLink'></b:includable>
+  <b:includable id='inlineAd' var='post'></b:includable>
+  <b:includable id='nextPageLink'></b:includable>
+  <b:includable id='post' var='post'></b:includable>
+  <b:includable id='postBodySnippet' var='post'></b:includable>
+  <b:includable id='postFooter' var='post'></b:includable>
+  <b:includable id='postJumpLink' var='post'></b:includable>
+  <b:includable id='postShareButtons'></b:includable>
+  <b:includable id='previousPageLink'></b:includable>
+  <b:includable id='sharingButtonContent'></b:includable>
+
+  <!-- MARKUPS - EXPLICIT IN SOHO -->
+  <b:includable id='main'></b:includable>
+  <b:includable id='defaultAdUnit'></b:includable>
+  <b:includable id='emailPostIcon'></b:includable>
+  <b:includable id='feedLinks'></b:includable>
+  <b:includable id='footerBylines'></b:includable>
+  <b:includable id='headerByline'></b:includable>
+  <b:includable id='post' var='post'></b:includable>
+  <b:includable id='postCommentsAndAd' var='post'></b:includable>
+  <b:includable id='postLabels'></b:includable>
+  <b:includable id='sharingButtonContent'></b:includable>
+</b:widget>

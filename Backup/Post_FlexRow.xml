@@ -3,40 +3,74 @@
 <head>
   <b:include data='blog' name='all-head-content'/>
   <title><data:blog.pageTitle/></title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" /> 
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" /> -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous" />
 
-  <b:skin version='1.3.0'><![CDATA[ 
-  /*! normalize.css v3.0.1 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+	<!-- Bootstrap CSS -->
+  <b:skin version='1.3.0'><![CDATA[
   /*
-  
-  <Variable name="bgcolor" description="Background Body" type="color" default="#f0f1f2" value="#f0f1f2" />
-  <Variable name="bgpost" description="Background Post" type="color" default="#fff" value="#d2f3e0" />
-  <Variable name="bgmain" description="Background Main" type="color" default="#fff" value="#feb9c8" />
- 
+  <Variable name="bgcolor1" description="Background Body" type="color" default="#fff" value="#e7eaf6" /> 
+  <Variable name="bgcolor2" description="Background Body" type="color" default="#fff" value="#a2a8d3" /> 
+  <Variable name="bgcolor3" description="Background Body" type="color" default="#fff" value="#38598b" /> 
+  <Variable name="bgcolor4" description="Background Body" type="color" default="#fff" value="#113f67" /> 
+
   */
+
+  /*! STYLE DI SINI */
+  * {margin: 0; padding:0}
+  html {margin: 0; padding:0}
   body {
     font-size: 14px;
-    background-color: skyblue;
+    background-color: $bgcolor4;
     font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.5;
-    
+    line-height: 1.5em;
   }
-  a {
-    text-decoration: none;
-    color: green;
-  }  
-  
-  #wrapper{ width: 60%; margin: auto; }
-  /*! MAIN */
+  a { text-decoration: none; color: #ddd;}
+  ol {list-style: none}  
+  ul,li,a {display : block}
+  /*! Wrapper */
+  #wrapper{
+  	width: 80%; 
+  	margin: 0 auto ; 
+  	background-color: $bgcolor3; 
+  	padding: 0.5%;
+
+  	display: grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+  	grid-auto-rows: minmax(50px, auto);
+  	align-content: center;
+  }
+  /*! Header */
+  header {
+  	grid-column: 1 / 4 ;
+  	grid-row: 1;
+		background-color: $bgcolor1; 
+		line-height: 1.3; 
+		padding: 1% 1%; 
+		text-align: center
+  }
+  /*! Aside */
+  aside {
+  	grid-column: 3;
+  	grid-row: 2 / 3;
+  }
+  /*! MAIN */  
   main {
-    background-color: $bgmain;
-    padding: 1%;
+  	grid-column: 1 / 3;
+  	grid-row: 2 / 3;
+  	background-color: $bgcolor2; 
+  	padding: 1%;
+  }
+  /*! Footer */
+  footer {
+  	grid-column: 1 / 4;
+  	grid-row: 3;
+  	background-color: $bgcolor1;
   }
   .post {
     display: flex;
+    max-height: 160px;
+    overflow: hidden;
     flex-direction: row;
     border: 1px solid #f0f1f2;
     background-color: $bgpost;
@@ -63,24 +97,22 @@
     color: #52616b;
   }
   .postBodyBeranda {
-    margin-top: 1%;
-    margin-bottom: 2%;
-    line-height: 1.7em;
-    font-size: 1em;
+  	margin-top: 0.5rem;
+    line-height: 1.3em;
+    font-size: 1.1em;
     color: #2F353E;
   }
 
   /*! POST BERANDA */
   .PostKiri {
-    flex: 1;
+    flex: 1 100px;
   } 
   .PostKanan {
-    flex: 2;
+    flex: 3;
     margin-left: 2%;
   }
   .PostKiri img {
   	width: 100%;
-  	height: 100%;
   }
   /* POST DETAIL */
   .PostDetail {
@@ -159,72 +191,56 @@
     margin-left: 1%;
   }
 
+  /*! Widget General */
+  .JudulWidget { background-color: $bgcolor2; padding: 1%; border-bottom: 2px #efefef solid}
+  .JudulWidget h2 {font-size: 1.2em; background-color: $bgcolor2}
 
+  .isiWidget {padding: 1%; background-color: $bgcolor1}
 
-  /*! Comment - Textarea */
-  #commentsHolder {
-    padding: 0; 
-    display: none;
+  aside ol {
+  	width: 100%;
   }
-  #commentBodyContainer {
-
+  aside li {
   }
-  #commentBodyField {
-    /*! Textarea */ 
-    font-size: 1.2em;
-    background: transparent;
-  }
-  #identityControlsHolder {
-
-  }
-  .dropdown {
-
-  }
-  .thread-toggle {
-    display: none;
-  }
-  .continue {
-    padding: 1% 0;
-    width: 100%;
-    background-color: #348498;
-    text-align: center;
-    margin-bottom: 1%;
-  }
-  .continue > a {
-    /*! Tombol Balasan */
-    padding: 1%;
+  aside li a {
+  	background-color: $bgcolor3;
+  	width: calc(100% - 2%);
+  	line-height: 2em;
+  	color: white;
+  	margin: 2px 0;
+  	padding: 0 1%;
   }
 
-  /*! Balas */
-  .comment-actions > a, .item-control > a{
-    /*! Tombol Balas dan Hapus */
-    background-color: #348498;
-    font-size: 1em;
-    padding: 0.5%;
-  }
-  /*! Isi Komentar */
-  .comment-content {
-    background-color: #fcf9ec;
-    padding: 1%;
-  }
+  @media (max-width: 992px){
+		/*! Desktop */
+		body {font-size: 12px}		
+		#wrapper {width: 95%; background-color: red; grid-gap: 0px; padding: 0}
+		main {grid-column: 1 / 4; padding: 0}
+		aside {grid-row: 3; grid-column: 1 / 4}
+		.postBodyBeranda {text-align: justify; line-height: 1.6}
+		.PostKanan {margin: 0; padding: 1% 2%; }
+		footer {grid-row: 4}
 
-  #postCommentSubmit {
-    background-color: green; 
-    border-radius: 0;
-  }
-  #postCommentPreview {
-    display: none;
-    width: 100%;
-  }
-  /*! VIEW */   
-  .v_default{
+	}
+	@media (max-width: 768px){
+		/*! Tablet - Pablet */
+		#wrapper {width: 100%; background-color: yellow;}
+		.post {flex-direction: column; max-height: 100vh;}
+		article {margin: 0}
+	}
+	@media (max-width: 576px; background-color: green){
+		/*! HP */
+	}
 
-  }  
-  /*! Fungsi Umum */
-  .hidden {display: none}
-  ]]></b:skin>
-  <b:defaultmarkups>
+  ]]>
+  </b:skin>
+   <b:defaultmarkups>
     <b:defaultmarkup type='Common'>
+    	<b:includable id='JudulWidget' var='x'>
+    		<div class="JudulWidget">
+	    		<h2><data:x /></h2>    		
+    		</div>
+    	</b:includable>
     </b:defaultmarkup>
     
     <b:defaultmarkup type='Blog'>
@@ -260,9 +276,9 @@
             <!-- Snippet Body Post Index-->
             <div class="PostKanan">
               <b:include name='PostTitle' data='data:x' />
+              <b:include name='PostFooter' data='data:x' />                    
 
               <b:include name='FungsiPost' data='data:x' />
-              <b:include name='PostFooter' data='data:x' />                    
             </div>          
           </div>
         </article>
@@ -354,41 +370,47 @@
           <h3 class='PostTitle entry-title'><a expr:href="data:x.url"><data:x.title /></a></h3>
         <b:else/>
           <h1 class='PostTitle entry-title'><data:x.title /></h1>
-
         </b:if>
+
       </b:includable>
     
     </b:defaultmarkup>
-
     <!-- WIDGET -->
+    <b:defaultmarkup type="PopularPosts">
+    	<b:includable id="main" var="x">
+	    	<b:include name="JudulWidget" data="data:title"/>
+	      <div class="isiWidget"> 
+	    		<ol class="">
+	    			<b:loop values="data:posts" var="x">
+	    				<li><a expr:href="data:x.url"><data:x.title/></a></li>
+	    			</b:loop>
+	    		</ol>
+       </div>
 
-    <b:defaultmarkup type='PopularPosts'>
-      <b:includable id='main' var='this'>
-        <b:loop values='data:posts' var='x'>
-          <li><data:x.title /></li>
-        </b:loop>
-      </b:includable>
+    	</b:includable>
     </b:defaultmarkup>
     
   </b:defaultmarkups>
 </head>
 <body>
- <b:class name='v_default' />
-  <div id="wrapper" class="container">
-    <main>
-      <b:section id='Main' showaddelement='yes'>
-        <b:widget id='Blog1' type='Blog'/>
-      </b:section>
-    </main>
-  </div>
-<script>
-let relatedtag = document.getElementsByClassName('related-tag')[0].getAttribute('data-label');
-console.log(relatedtag);
-function related_results_labels(json){
-  console.log(json.feeds)
-}
-</script>
-<script src='/feeds/posts/default?alt=json&amp;callback=related_results_labels&amp;max-results&amp;orderby=updated'></script>
+	<div id="wrapper">
+		<header>
+			<b:section id='header' showaddelement='yes'>
+				<b:widget id='Header1' type='Header' />
+			</b:section> 
+		</header>
+		<main>
+			<b:section id='main' showaddelement='yes'>
+      	<b:widget id='Blog1' type='Blog'/>
+    	</b:section>
+		</main>
+		<aside>
+			<b:section id='aside' showaddelement='yes'>
+				<b:widget id='PopularPosts1' type='PopularPosts' title="Popular Post" /> 
+			</b:section>
+		</aside>
+		<footer>footer</footer>
+	</div>	
+
 </body>
 </html>
-

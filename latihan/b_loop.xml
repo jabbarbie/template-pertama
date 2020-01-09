@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin version='1.3.0'> <![CDATA[
+	/* Definisi Variable nya Disini  
+  	
+  	*/
+  		
+  		
+	]]></b:skin>
+
+</head>
+<body>
+
+    <h1> Perulangan Pertama </h1>
+    <ul>
+      <b:loop values='["Jabbar","Bie","Mantaps"]' var="nama" index="i">
+        <li><data:i /> <data:nama /></li>
+      </b:loop>
+    </ul>
+
+    <b:loop values='["1", "2", "3", "4"]' var='this'>
+      <data:this/>
+    </b:loop>
+  
+
+  <b:section id="NamaID" showaddelement="yes" name="Tempat Menambahkan Widget" />
+</body>
+</html>
+
+<!-- 
+
+reverse => sorting perulanganya.. asc / desc
+index => key dari perulanganya.. 
+values => ARRAY nya
+var => nama variablenya yg akan digunakan nanti di dalam perulangannya
+
+<b:loop values="wajib" var="wajib" index="String" reverse="boolean">
+
+</b:loop>
+
+/// EXAMPLE ///
+<b:loop values='["Jabbar","Bie","Mantaps"]' var="dataku" index="nomor">
+  <data:nomor /> <data:dataku />
+</b:loop>
+
+
+
+-->

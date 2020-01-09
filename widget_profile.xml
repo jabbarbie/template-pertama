@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html b:css='false' b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <b:include data='blog' name='all-head-content'/>
+  <title><data:blog.pageTitle/></title>
+  <b:skin version='1.3.0'><![CDATA[ 
+  /*
+  <Variable name="bgcolor" description="Background Body" type="color" default="#f0f1f2" value="#f0f1f2" /> 
+  */
+
+  /*! STYLE DI SINI */
+  body{font-size: 12px; line-height: 1}
+  ]]>
+  </b:skin>
+  <b:defaultmarkups>
+  	<b:defaultmarkup type="Profile">
+  		<b:includable id="main">
+  		<!-- Jika Blog terdiri dari beberapa penulis -->
+  		<b:if cond='data:team'>
+  			<b:loop values='data:authors' var='author'>
+		      <data:author.userUrl/>
+		      <data:author.display-name/>
+		      <data:author.profileLogo/>
+		      <data:author.authorPhoto.image/>
+		      <data:author.authorPhoto.width/>
+		      <data:author.authorPhoto.heigth/>
+		    </b:loop>
+  		<b:else/>
+  		<!-- Jika Hanya ada 1 Penulis -->
+  			<h2>title : 
+  				<data:title />
+  			</h2><!-- Judul Widget -->
+  			<h2>displayname : 
+  				<data:displayname />
+  			</h2> <!-- Nama Penulis -->
+  			<h2>profileLogo  : 
+  				<data:profileLogo />
+  			</h2> <!-- url image gambar penulis -->
+  			<h2>userUrl : 
+  				<data:userUrl />
+  			</h2><!-- url link ke profil blogger -->
+  			<h2>location : 
+  				<data:location />
+  			</h2>
+  			<h2>aboutme : 
+  				<data:aboutme />
+  			</h2><!-- Aboutme profil  -->
+  			<h2>viewProfilMsg : 
+  				<data:viewProfileMsg />
+  			</h2><!-- text lihat profile lengkapku -->1. <br />
+  			<h2>authorPhoto.image : 
+  				<data:authorPhoto.image/>
+  			</h2><!-- Url image gambar penulis large -->2. <br />
+		    <h2>authorPhoto.width : 
+		    	<data:authorPhoto.width/>
+		    </h2><!-- Width --><br />
+		    <h2>authorPhoto.height : 
+		    	<data:authorPhoto.heigth/>
+		   	
+		   	team ? <data:team/>
+    		showlocation ? <data:showlocation/>
+    		showaboutme ? <data:showaboutme/>
+			</h2>
+
+		</b:if>
+
+  		</b:includable>
+  	</b:defaultmarkup>
+  </b:defaultmarkups>
+</head>
+<body>
+  <div id="wrapper" class="container">
+    <main>
+      <b:section id='Widget' showaddelement='yes'>
+      	<b:widget id="Profile1" type="Profile" title="Penulis" />
+      </b:section>
+    </main>
+  </div>
+
+</body>
+</html>

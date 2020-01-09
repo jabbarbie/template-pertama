@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html b:version='2'  b:defaultwidgetversion='2' b:responsive='true' class='v2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+	<b:include data='blog' name='all-head-content'/>
+	<title><data:blog.pageTitle/></title>
+
+	<b:skin version='1.3.0'> <![CDATA[
+	/* Definisi Variable nya Disini  
+  	
+  	*/
+  		
+  		
+	]]></b:skin>
+
+</head>
+<body>
+  <b:section id="NamaID" maxwidgets="3" showaddelement="yes" name="Tempat Menambahkan Widget">
+  </b:section>
+</body>
+</html>
+
+
+<!--
+name : untuk memberinama pada section 
+akan muncul pada saat membuka tata letak
+
+preferred :
+-->
