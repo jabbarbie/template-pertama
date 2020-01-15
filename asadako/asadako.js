@@ -1,5 +1,5 @@
-document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
-  let lazyImages = [].slice.call(document.querySelectorAll(&quot;img.lazy&quot;));
+document.addEventListener('DOMContentLoaded', function() {
+  let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
   let active = false;
 
   const lazyLoad = function() {
@@ -8,22 +8,22 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
 
       setTimeout(function() {
         lazyImages.forEach(function(lazyImage) {
-          if ((lazyImage.getBoundingClientRect().top &lt;= window.innerHeight &amp;&amp; lazyImage.getBoundingClientRect().bottom   &gt;= 0) &amp;&amp; getComputedStyle(lazyImage).display !== &quot;none&quot;) {
+          if ((lazyImage.getBoundingClientRect().top &lt;= window.innerHeight &amp;&amp; lazyImage.getBoundingClientRect().bottom   &gt;= 0) &amp;&amp; getComputedStyle(lazyImage).display !== 'none') {
             
             lazyImage.src = lazyImage.dataset.src;
 
 
             lazyImage.srcset = lazyImage;
-            lazyImage.classList.remove(&quot;lazy&quot;);
+            lazyImage.classList.remove('lazy');
 
             lazyImages = lazyImages.filter(function(image) {
               return image !== lazyImage;
             });
 
             if (lazyImages.length === 0) {
-              document.removeEventListener(&quot;scroll&quot;, lazyLoad);
-              window.removeEventListener(&quot;resize&quot;, lazyLoad);
-              window.removeEventListener(&quot;orientationchange&quot;, lazyLoad);
+              document.removeEventListener('scroll', lazyLoad);
+              window.removeEventListener('resize', lazyLoad);
+              window.removeEventListener('orientationchange', lazyLoad);
             }
           }
         });
@@ -33,7 +33,7 @@ document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
     }
   };
 
-  document.addEventListener(&quot;scroll&quot;, lazyLoad);
-  window.addEventListener(&quot;resize&quot;, lazyLoad);
-  window.addEventListener(&quot;orientationchange&quot;, lazyLoad);
+  document.addEventListener('scroll', lazyLoad);
+  window.addEventListener('resize', lazyLoad);
+  window.addEventListener('orientationchange', lazyLoad);
 });
